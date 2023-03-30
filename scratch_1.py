@@ -67,7 +67,6 @@ class Reviewer(Mentor):
 best_student = Student('Ruoy', 'Eman', 'your_gender')
 best_student.courses_in_progress += ['Python']
 best_student.finished_courses += ['The school']
-
 good_student = Student('Ruoy', 'Eman', 'your_gender')
 good_student.courses_in_progress += ['Python']
 good_student.finished_courses += ['Some postgraduate studies']
