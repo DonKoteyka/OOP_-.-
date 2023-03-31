@@ -22,6 +22,11 @@ class Student:
 Курсы в процессе изучения: {', '.join(self.courses_in_progress)}
 Завершенные курсы: {', '.join(self.finished_courses)}'''
         return res
+    def compare(self, student2):
+        if sum(self.grades.values(),[]) > sum(student2.grades.values(),[]):
+            return f'{self} > {student2}'
+        else:
+            return f'{self} < {student2}'
 
 class Mentor:
     def __init__(self, name, surname):
@@ -67,7 +72,7 @@ class Reviewer(Mentor):
 best_student = Student('Ruoy', 'Eman', 'your_gender')
 best_student.courses_in_progress += ['Python']
 best_student.finished_courses += ['The school']
-good_student = Student('Ruoy', 'Eman', 'your_gender')
+good_student = Student('Snake', 'Choker', 'The_best_gender')
 good_student.courses_in_progress += ['Python']
 good_student.finished_courses += ['Some postgraduate studies']
 
@@ -85,9 +90,10 @@ best_student.rate_lecturer(super_lecturer, 'Python', 10)
 cool_mentor.rate_hw(best_student, 'Python', 10)
 cool_mentor.rate_hw(best_student, 'Python', 10)
 
-print(super_lecturer.grades)
+
 print(super_lecturer)
 print(some_reviewer)
-print(best_student)
+print(best_student.compare(good_student))
+
 
 
